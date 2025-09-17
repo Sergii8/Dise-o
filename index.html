@@ -58,10 +58,18 @@
       overflow: hidden;
     }
 
-    .video-section video {
+    .youtube-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+    }
+
+    .youtube-bg iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .circle-overlay {
@@ -69,8 +77,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 250px;   /* antes 150px */
-      height: 250px;  /* antes 150px */
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.8);
       display: flex;
@@ -80,7 +88,7 @@
     }
 
     .circle-overlay img {
-      width: 100%;  /* ocupa todo el círculo */
+      width: 100%;
       height: auto;
       border-radius: 50%;
     }
@@ -106,17 +114,17 @@
     .quienes-somos {
       max-width: 800px;
       margin: 40px auto;
-      text-align: left; /* texto alineado a la izquierda */
+      text-align: left;
     }
 
     .quienes-somos p {
       margin-bottom: 20px;
       line-height: 1.6;
       text-align: justify;
-      text-justify: inter-word; /* evita espacios demasiado largos */
+      text-justify: inter-word;
     }
 
-    /* CONTENEDOR 2 CAJAS (sin fondo gris) */
+    /* CONTENEDOR 2 CAJAS */
     .two-boxes {
       display: flex;
       gap: 20px;
@@ -145,7 +153,7 @@
       font-weight: 500;
     }
 
-    /* CONTENEDOR CON CUADRO + TEXTO (dos en fila) */
+    /* CONTENEDOR CON CUADRO + TEXTO */
     .two-colored-row {
       display: flex;
       gap: 40px;
@@ -161,37 +169,34 @@
       flex: 1;
     }
 
-    /* CUADROS DE COLOR INDIVIDUALES */
+    /* CUADROS DE COLOR */
     .colorito1 {
-  width: 100px;
-  height: 100px;
-  background: #9F8E7E; /* cambia este color */
-  border-radius: 8px;
-
-  /* aplica la animación */
-  animation: bounce 2s infinite;
-}
+      width: 100px;
+      height: 100px;
+      background: #9F8E7E;
+      border-radius: 8px;
+      animation: bounce 2s infinite;
+    }
 
     .colorito2 {
       width: 100px;
       height: 100px;
-      background: #C27E5D; /* cambia este color */
+      background: #C27E5D;
       border-radius: 8px;
-
       animation: bounce 2s infinite;
     }
 
     @keyframes bounce {
-  0%   { transform: translatey(0); }
-  40% { transform: translatey(-20px); }
-  60% { transform: translatey(-10px); }
-}
+      0%   { transform: translateY(0); }
+      40%  { transform: translateY(-20px); }
+      60%  { transform: translateY(-10px); }
+    }
 
     .color-text {
       flex: 1;
     }
 
-    /* CONTENEDOR DE GALERÍA */
+    /* GALERÍA */
     .gallery-section {
       margin: 40px auto;
       max-width: 1100px;
@@ -218,31 +223,30 @@
 
     /* FOOTER */
     footer {
-  background: #a47b5a;
-  padding: 40px 0 20px;
-  text-align: center;
-  margin-top: 50px;
-}
+      background: #a47b5a;
+      padding: 40px 0 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
 
-footer .icon {
-  background: #fff;
-  width: 80px;   /* puedes ajustar el tamaño */
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* oculta lo que salga del círculo */
-}
+    footer .icon {
+      background: #fff;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-footer .icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* mantiene proporción */
-  border-radius: 50%;
-}
-
+    footer .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
@@ -264,33 +268,29 @@ footer .icon img {
 
   <!-- VIDEO CON CÍRCULO -->
   <section class="video-section">
-  <!-- Video de YouTube embebido -->
-  <div class="youtube-bg">
-    <iframe src="https://youtu.be/zrj1Li6McYA"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Logo o imagen encima -->
-  <div class="circle-overlay">
-    <img src="img/circular.png" alt="Logo o imagen">
-  </div>
-</section>
-
+    <div class="youtube-bg">
+      <iframe src="https://www.youtube.com/embed/zrj1Li6McYA?autoplay=1&mute=1&loop=1&playlist=zrj1Li6McYA"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+      </iframe>
+    </div>
+    <div class="circle-overlay">
+      <img src="img/circular.png" alt="Logo o imagen">
+    </div>
+  </section>
 
   <!-- QUIÉNES SOMOS -->
   <section class="quienes-somos">
     <h1>¿Quiénes Somos?</h1><br>
     <p>
       Somos una librería diferente, un espacio donde los libros se disfrutan con calma, acompañados de un ambiente
-       cálido y un buen café. Queremos que tengas un lugar para leer, pensar y conversar sin prisa, rodeado de historias 
-       y aromas.
+      cálido y un buen café. Queremos que tengas un lugar para leer, pensar y conversar sin prisa, rodeado de historias 
+      y aromas.
     </p>
     <p>
       A diferencia de las librerías tradicionales, aquí no solo vendemos libros: ofrecemos espacios para leer y 
-       compartir, rincones para inspirarte y hasta la posibilidad de recibir tus libros directamente en casa con nuestro servicio de 
+      compartir, rincones para inspirarte y hasta la posibilidad de recibir tus libros directamente en casa con nuestro servicio de 
       venta a domicilio.
     </p>
     <p>
@@ -323,7 +323,7 @@ footer .icon img {
     </div>
   </div>
 
-  <!-- GALERÍAS REPETIDAS -->
+  <!-- GALERÍAS -->
   <section class="gallery-section">
     <h2>Banderas</h2>
     <div class="gallery">
@@ -356,8 +356,7 @@ footer .icon img {
   </section>
 
   <section class="gallery-section">
-    <h2>Mugs
-    </h2>
+    <h2>Mugs</h2>
     <div class="gallery">
       <img src="img/muggy.png" alt="Imagen 1">
     </div>
@@ -365,10 +364,10 @@ footer .icon img {
 
   <!-- FOOTER -->
   <footer>
-  <div class="icon">
-    <img src="img/circular.png" alt="logo">
-  </div>
-</footer>
+    <div class="icon">
+      <img src="img/circular.png" alt="logo">
+    </div>
+  </footer>
 
 </body>
 </html>
